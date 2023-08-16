@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="scrollable-content">
+    <div class="user-profile" *ngIf="user$ | async as user">
+      <ion-avatar class="user-avatar">
+        <ion-img [src]="user?.picture" alt="Profile Picture"></ion-img>
+      </ion-avatar>
+   
+      <div class="user-info">
+        <h2 class="user-name">{{ user?.firstName }} {{ user?.lastName }}</h2>
+        <p class="user-email">{{ user?.email }}</p>
+      </div>
+    </div>
+
+    <ion-list>
+      <ion-item-group>
+        <ion-item-divider><ion-icon slot="start" name="person-circle" size="large"></ion-icon> Cuenta</ion-item-divider>
+        <ion-item (click)="openConsultapromociones()">
+          <ion-icon slot="start" name="compass"></ion-icon> 
+          Consulta promociones
+        </ion-item>
+                <ion-item><ion-icon slot="start" name="pricetag"></ion-icon> Mis cupones</ion-item>
+                <ion-item (click)="openTarjetaRegalo()">
+                  <ion-icon slot="start" name="compass"></ion-icon> 
+                  Tarjeta de regalo
+                </ion-item>
+
+      </ion-item-group>
+
+      <ion-item-group style="margin-top: 20px;">
+        <ion-item-divider><ion-icon slot="start" name="hammer" size="large"></ion-icon> Herramientas</ion-item-divider>
+        <ion-item (click)="openUbicaciones()">
+          <ion-icon slot="start" name="compass"></ion-icon> 
+          Buscar Ubicaciones
+        </ion-item>       
+        <ion-item (click)="openPoliticas()">
+          <ion-icon slot="start" name="compass"></ion-icon> 
+          Politicas de Garantia
+        </ion-item>        
+        <ion-item><ion-icon slot="start" name="ellipsis-horizontal-circle"></ion-icon> Opción 3</ion-item>
+      </ion-item-group>
+
+      <ion-item-group style="margin-top: 20px;">
+        <ion-item-divider><ion-icon slot="start" name="help-circle" size="large"></ion-icon> Ayuda</ion-item-divider>
+        <ion-item (click)="sendWhatsAppMessage($event)"><ion-icon slot="start" name="chatbubble-ellipses"></ion-icon> Soporte tecnico</ion-item>
+        <ion-item><ion-icon slot="start" name="people"></ion-icon> Invitar amigos</ion-item>
+      </ion-item-group>
+    </ion-list>
+  </div>
+</ion-content>

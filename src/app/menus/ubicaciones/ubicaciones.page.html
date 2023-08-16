@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Ubicaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Ubicaciones</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" *ngFor="let tienda of tiendas">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ tienda.nombre }}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>{{ tienda.descripcion }}</p>
+            <ion-item lines="none">
+              <ion-icon slot="start" name="map-outline" color="success"></ion-icon>
+              <a [href]="getGoogleMapsLink(tienda.url)" target="_blank"> Ver en Google Maps</a>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

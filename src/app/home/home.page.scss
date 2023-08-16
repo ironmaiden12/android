@@ -1,0 +1,75 @@
+
+  .icon-row {
+    background-color: white;
+    border-radius: 25px;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); // Esto agrega una sombra negra
+}
+
+
+.icon-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-col ion-icon {
+    color: black;
+}
+
+.button-icon {
+  margin-top: 60px;
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 80px;
+  height: 80px; 
+}
+
+.centered-content {
+  display: flex;
+  justify-content: center;
+}
+.icon-label {
+  text-align: center;
+  color: #000000;
+  font-size: 14px;
+  text-shadow: 2px 2px 2px rgb(255, 255, 255); 
+}
+.icon-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  margin: 10px;
+  text-align: center;
+}
+
+.toolbar-and-title {
+  --background: #33ED9C;
+  --color: black;
+}
+
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-item {
+  margin-top: 10px;
+  flex-shrink: 0; /* Agrega esta línea */
+  width: 390px;
+  height: 350px;
+  margin-right: 10px;
+  margin-left: 5px;
+  object-fit: cover; 
+}
+
+
+
+

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">rematech</string>
+    <string name="title_activity_main">rematech</string>
+    <string name="package_name">com.rematech.app</string>
+    <string name="custom_url_scheme">com.rematech.app</string>
+    <string name="server_client_id">763541469753-v6nh2hc5flgi16nten0jdrusg0js52al.apps.googleusercontent.com</string>
+</resources>

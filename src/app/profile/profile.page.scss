@@ -1,0 +1,40 @@
+ion-content {
+  height: 100%;
+}
+
+.scrollable-content {
+  height: calc(100% - 120px);
+  overflow-y: auto;
+}
+
+
+  .user-avatar {
+    margin-top: 10px;
+    --size: 40px; /* Ajusta el tamaño de tu avatar */
+    margin-left: 10px; /* Mueve el avatar hacia la derecha */
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10px; /* Añade un margen a la derecha para darle espacio al avatar */
+    margin-left: 10px; /* Añade un margen a la izquierda para darle espacio a los datos del usuario */
+  }
+  
+  .user-name, .user-email {
+    margin: 0; /* Remueve los márgenes por defecto de los elementos h2 y p */
+  }
+  
+  .user-name {
+    font-size: 16px; /* Ajusta el tamaño de fuente de tu elección */
+    color: #333; /* Ajusta el color de la fuente */
+    font-weight: bold; /* Hace el nombre del usuario en negrita */
+  }
+  
+  .user-email {
+    font-size: 14px; /* Ajusta el tamaño de fuente de tu elección */
+    color: #666; /* Ajusta el color de la fuente */
+  }
+  
+  

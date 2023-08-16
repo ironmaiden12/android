@@ -1,0 +1,38 @@
+/* home.page.scss */
+.dark-title {
+    color: white;
+    text-align: center;
+  }
+  
+  .light-title {
+    color: black;
+    text-align: center;
+  }
+  @-webkit-keyframes spin-jump {
+    0% {
+      -webkit-transform: rotate(0deg) translateY(0px);
+      transform: rotate(0deg) translateY(0px);
+    }
+    25% {
+      -webkit-transform: rotate(90deg) translateY(-20px);
+      transform: rotate(90deg) translateY(-20px);
+    }
+    50% {
+      -webkit-transform: rotate(180deg) translateY(0px);
+      transform: rotate(180deg) translateY(0px);
+    }
+    75% {
+      -webkit-transform: rotate(270deg) translateY(-20px);
+      transform: rotate(270deg) translateY(-20px);
+    }
+    100% {
+      -webkit-transform: rotate(360deg) translateY(0px);
+      transform: rotate(360deg) translateY(0px);
+    }
+  }
+  
+  .img-animation {
+    -webkit-animation: spin-jump 2s infinite;
+    animation: spin-jump 2s infinite;
+  }
+  

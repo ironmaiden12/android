@@ -1,0 +1,4 @@
+<div *ngIf="qrResult" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+  <h2 style="margin-bottom: 20px; color: black;">Código Promocional</h2>
+  <qrcode [qrdata]="qrResult | json" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+</div>

@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>consultapromociones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">consultapromociones</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div style="position: relative; min-height: 70vh;">
+    <zxing-scanner
+    #scanner
+    [device]="currentDevice"
+    [formats]="scannerFormats"
+    (scanSuccess)="handleQrCodeResult($event)"
+    [hidden]="!scannerEnabled || !hasPermission">
+    </zxing-scanner>
+
+    <!-- Overlay para guía de escaneo -->
+    
+    <!-- Superposición para indicador de carga -->
+    <div *ngIf="isLoading" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center;">
+      <ion-spinner name="crescent"></ion-spinner>
+    </div>
+    
+    <!-- Superposición para mostrar el resultado -->
+    <div *ngIf="qrResult && !isLoading" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.8); padding: 10px; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <div *ngFor="let key of qrResult | keyvalue">
+        <strong>{{key.key}}:</strong> {{key.value}}
+      </div>
+    </div>
+    
+    <!-- Superposición para mostrar el mensaje de no encontrado -->
+    <div *ngIf="notFoundMessage && !isLoading" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.8); padding: 10px; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      {{ notFoundMessage }}
+    </div>
+  </div>
+
+  <!-- <ion-button *ngIf="!scannerEnabled" (click)="enableScanner()">Abrir Cámara</ion-button>
+  <ion-button *ngIf="scannerEnabled" (click)="disableScanner()">Cerrar Cámara</ion-button> -->
+
+  <!-- Puedes mostrar un mensaje si no se ha concedido permiso -->
+  <p *ngIf="!hasPermission">No se ha concedido permiso para la cámara.</p>
+</ion-content>

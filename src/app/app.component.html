@@ -1,0 +1,20 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+    <ion-footer *ngIf="showMenu">
+      <ion-grid>
+        <ion-row class="icon-row">
+          <ion-col class="icon-col">
+            <ion-icon [class.active-icon]="activePage === 'home'" class="large-icon" src="assets/home-sharp.svg" (click)="onHomeClick()"></ion-icon>
+          </ion-col>
+          <ion-col class="icon-col">
+            <ion-icon [class.active-icon]="activePage === 'promo'" class="large-icon" src="assets/qr-code-sharp.svg" (click)="onPromoClick()"></ion-icon>
+          </ion-col>
+          <ion-col class="icon-col">
+            <ion-icon [class.active-icon]="activePage === 'profile'" class="large-icon" src="assets/person-sharp.svg" (click)="onProfileClick()"></ion-icon>
+          </ion-col>                  
+        </ion-row>
+      </ion-grid>
+    </ion-footer>
+  </ion-split-pane>
+</ion-app>

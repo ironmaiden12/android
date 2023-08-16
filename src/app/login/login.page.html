@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicia sesion para:</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-title style="color: black; margin-top: 20px;">Recibir Descuentos especiales</ion-title>
+
+  <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+    <img src="assets/regalo.png" alt="Regalo" style="width: 100px;" class="img-animation">
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-button 
+    style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px; " 
+    expand="full" 
+    (click)="signIn()" 
+    *ngIf="!user"
+  >
+    <ion-icon name="logo-google" slot="start"></ion-icon> 
+    Iniciar con Google
+  </ion-button>
+</ion-footer>
+
+<style>
+@keyframes spin-jump {
+  0% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  25% {
+    transform: rotate(90deg) translateY(-20px);
+  }
+  50% {
+    transform: rotate(180deg) translateY(0px);
+  }
+  75% {
+    transform: rotate(270deg) translateY(-20px);
+  }
+  100% {
+    transform: rotate(360deg) translateY(0px);
+  }
+}
+</style>
