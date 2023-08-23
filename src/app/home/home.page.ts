@@ -38,7 +38,7 @@ export class HomePage implements OnInit {
   async openMenucuponesModal() {
     const modal = await this.modalController.create({
       component: MenucuponesPage,
-      cssClass: 'custom-modal'
+      cssClass: 'custom-modalsoporte'
     });
     return await modal.present();
   }
