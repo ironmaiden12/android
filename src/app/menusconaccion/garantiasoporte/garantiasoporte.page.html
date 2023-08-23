@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Garantía y Soporte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Garantía y Soporte</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Garantía</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Nuestro producto cuenta con una garantía de 12 meses contra defectos de fábrica. Si experimenta problemas dentro de este período, póngase en contacto con nuestro equipo de soporte.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Soporte Técnico</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Si tiene problemas técnicos o dudas relacionadas con el producto, contáctenos al <a href="tel:+527228448432">+527228448432</a> o envíe un correo electrónico a <a href="soporte@rematech.mx">soporte@rematech.mx</a>.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>FAQ</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>¿Cómo reinicio mi producto?</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Para reiniciar el producto, mantenga presionado el botón de encendido durante 10 segundos.</ion-label>
+        </ion-item>
+        <!-- Puedes agregar más preguntas frecuentes aquí -->
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Formulario de Soporte</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input [(ngModel)]="userName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input type="email" [(ngModel)]="userEmail"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Mensaje</ion-label>
+        <ion-textarea [(ngModel)]="userMessage"></ion-textarea>
+      </ion-item>
+
+      <ion-button expand="full" (click)="submitSupportRequest()">Enviar</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

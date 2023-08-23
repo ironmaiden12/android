@@ -32,6 +32,13 @@
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
     --background: white;
   }
+  .custom-modalsoporte {
+    --height: 90%;
+    --width: 100%;
+    --border-radius: 20px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    --background: white;
+  }
   /* En el archivo .scss correspondiente a tu página (por ejemplo, home.page.scss) */
   .my-custom-modal {
     --height: 40%;

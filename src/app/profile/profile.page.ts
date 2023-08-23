@@ -22,7 +22,7 @@ export class ProfilePage implements OnInit {
   }
 
   ngOnInit() {
-    this.checkAuth(); 
+    // this.checkAuth(); 
   }
   sendWhatsAppMessage(event: Event) {
     // Prevenir el envío del formulario
@@ -40,15 +40,15 @@ export class ProfilePage implements OnInit {
     window.open(url, "_blank");
   }
 
-  async checkAuth() {
-    if (!this.authService.isAuthenticated()) {
-      const modal = await this.modalController.create({
-        component: LoginPage,
-        cssClass: 'my-custom-modal'
-      });
-      return await modal.present();
-    }
-  }
+  // async checkAuth() {
+  //   if (!this.authService.isAuthenticated()) {
+  //     const modal = await this.modalController.create({
+  //       component: LoginPage,
+  //       cssClass: 'my-custom-modal'
+  //     });
+  //     return await modal.present();
+  //   }
+  // }
 
   async openConsultapromociones() {
     const modal = await this.modalController.create({

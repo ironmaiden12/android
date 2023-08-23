@@ -10,4 +10,40 @@
       <ion-title size="large">menucupones</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <!-- Lista de Cupones -->
+  <ion-list>
+    <ion-item *ngFor="let cupon of cupones; let i = index">
+      <ion-label>
+        <h2>{{ cupon.title }}</h2>
+        <p>{{ cupon.description }}</p>
+        <h3>Código: {{ cupon.code }}</h3>
+      </ion-label>
+      <ion-button slot="end" color="danger" (click)="removeCupon(i)">Eliminar</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Formulario para agregar Cupones -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Agregar Cupón</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Título</ion-label>
+        <ion-input [(ngModel)]="newCupon.title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-input [(ngModel)]="newCupon.description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Código</ion-label>
+        <ion-input [(ngModel)]="newCupon.code"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="addCupon()">Agregar Cupón</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

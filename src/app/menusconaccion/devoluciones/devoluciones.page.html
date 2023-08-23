@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Intercambio de Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Intercambio de Productos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let product of ownedProducts" size="6">
+        <ion-card (click)="selectProduct(product)">
+          <img [src]="product.img" alt="{{product.name}}">
+          <ion-card-header>
+            <ion-card-title>{{ product.name }}</ion-card-title>
+            <ion-icon name="swap-horizontal" slot="start" *ngIf="firstSelectedProduct && firstSelectedProduct.id === product.id"></ion-icon>
+            <ion-icon name="checkmark" slot="start" color="success" *ngIf="secondSelectedProduct && secondSelectedProduct.id === product.id"></ion-icon>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card *ngIf="tradeStatus === 'confirming'" [@fadeIn]>
+    <ion-card-header>
+      <ion-card-title>Confirmar Intercambio</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Tu Producto:</ion-label>
+        <ion-text>{{ firstSelectedProduct.name }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Por:</ion-label>
+        <ion-text>{{ secondSelectedProduct.name }}</ion-text>
+      </ion-item>
+      <ion-button expand="full" color="primary" (click)="confirmTrade()">Confirmar</ion-button>
+      <ion-button expand="full" color="danger" (click)="resetTrade()">Cancelar</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

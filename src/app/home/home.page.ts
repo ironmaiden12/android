@@ -10,6 +10,11 @@ import {
   PushNotifications,
   Token,
 } from '@capacitor/push-notifications';
+import { GarantiasoportePage } from '../menusconaccion/garantiasoporte/garantiasoporte.page';
+import { WalletPage } from '../menusconaccion/wallet/wallet.page';
+import { DevolucionesPage } from '../menusconaccion/devoluciones/devoluciones.page';
+import { EcommercePage } from '../menusconaccion/ecommerce/ecommerce.page';
+import { WishlistPage } from '../menusconaccion/wishlist/wishlist.page';
 
 
 @Component({
@@ -25,7 +30,7 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.user$;
-    this.checkAuth(); // Añade la llamada al método checkAuth
+    // this.checkAuth(); // Añade la llamada al método checkAuth
     this.initializePushNotifications();
   }
 
@@ -45,22 +50,58 @@ export class HomePage implements OnInit {
     });
     return await modal.present();
   }
+  async openMenugarantiasoporteModal() {
+    const modal = await this.modalController.create({
+      component: GarantiasoportePage,
+      cssClass: 'custom-modalsoporte'
+    });
+    return await modal.present();
+  }
+  async openMenuwalletModal() {
+    const modal = await this.modalController.create({
+      component: WalletPage,
+      cssClass: 'custom-modalsoporte'
+    });
+    return await modal.present();
+  }
+  async openMenudevolucionesModal() {
+    const modal = await this.modalController.create({
+      component: DevolucionesPage,
+      cssClass: 'custom-modalsoporte'
+    });
+    return await modal.present();
+  }
+  async openMenusecommerceModal() {
+    const modal = await this.modalController.create({
+      component: EcommercePage,
+      cssClass: 'custom-modalsoporte'
+    });
+    return await modal.present();
+  }
+  async openMenuswishlistModal() {
+    const modal = await this.modalController.create({
+      component: WishlistPage,
+      cssClass: 'custom-modalsoporte'
+    });
+    return await modal.present();
+  }
+  
 
   // Método para comprobar autenticación y mostrar LoginPage como un modal
-  async checkAuth() {
-    try {
-      if (!this.authService.isAuthenticated()) {
-        const modal = await this.modalController.create({
-          component: LoginPage,
-          cssClass: 'my-custom-modal'
-        });
+  // async checkAuth() {
+  //   try {
+  //     if (!this.authService.isAuthenticated()) {
+  //       const modal = await this.modalController.create({
+  //         component: LoginPage,
+  //         cssClass: 'my-custom-modal'
+  //       });
     
-        return await modal.present();
-      }
-    } catch (error) {
-      // Show error message to user
-    }
-  }
+  //       return await modal.present();
+  //     }
+  //   } catch (error) {
+  //     // Show error message to user
+  //   }
+  // }
   
 
   private initializePushNotifications() {

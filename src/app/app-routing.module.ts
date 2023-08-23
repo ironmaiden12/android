@@ -60,6 +60,26 @@ const routes: Routes = [
     path: 'politicas',
     loadChildren: () => import('./menus/politicas/politicas.module').then( m => m.PoliticasPageModule)
   },
+  {
+    path: 'garantiasoporte',
+    loadChildren: () => import('./menusconaccion/garantiasoporte/garantiasoporte.module').then( m => m.GarantiasoportePageModule)
+  },
+  {
+    path: 'wallet',
+    loadChildren: () => import('./menusconaccion/wallet/wallet.module').then( m => m.WalletPageModule)
+  },
+  {
+    path: 'devoluciones',
+    loadChildren: () => import('./menusconaccion/devoluciones/devoluciones.module').then( m => m.DevolucionesPageModule)
+  },
+  {
+    path: 'ecommerce',
+    loadChildren: () => import('./menusconaccion/ecommerce/ecommerce.module').then( m => m.EcommercePageModule)
+  },
+  {
+    path: 'wishlist',
+    loadChildren: () => import('./menusconaccion/wishlist/wishlist.module').then( m => m.WishlistPageModule)
+  },
 
  
 ];
