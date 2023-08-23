@@ -21,39 +21,41 @@
 }
 
 .button-icon {
-  margin-top: 60px;
-  margin-right: 20px;
-  margin-left: 20px;
-  width: 80px;
-  height: 80px; 
+  margin-top: 8px;  /* Reduce el margen superior para menos espacio entre íconos. */
+  width: 60px;
+  height: 60px;
 }
 
 .centered-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start; /* Alinea todos los ítems desde la parte superior. */
+  gap: 15px;  /* Reduce el espacio entre íconos para un aspecto más compacto. */
 }
+
 .icon-label {
-  text-align: center;
-  color: #000000;
-  font-size: 14px;
-  text-shadow: 2px 2px 2px rgb(255, 255, 255); 
+  margin-top: 5px;
 }
+
 .icon-container {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
-  margin: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Asegura que el contenido interno también se alinee desde la parte superior. */
+  margin: 8px 0;  /* Ajusta el margen vertical para reducir espacio entre contenedores. */
   text-align: center;
+  width: 84px;
 }
 
 .toolbar-and-title {
-  --background: #33ED9C;
-  --color: black;
+  --background: #393e46;
+  --color: #00adb5; 
 }
 
 
 .scroll-container {
+
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
@@ -63,12 +65,13 @@
 .scroll-item {
   margin-top: 10px;
   flex-shrink: 0; /* Agrega esta línea */
-  width: 390px;
-  height: 350px;
+  width: 230px;  /* 75% del valor original (390px * 0.75) */
+  height: 242.5px; /* 75% del valor original (350px * 0.75) */
   margin-right: 10px;
   margin-left: 5px;
   object-fit: cover; 
 }
+
 
 
 
