@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: EcommercePage
+  },
+  {
+    path: 'productdetail',
+    loadChildren: () => import('./productdetail/productdetail.module').then( m => m.ProductdetailPageModule)
+  },
+  {
+    path: 'cartpage',
+    loadChildren: () => import('./cartpage/cartpage.module').then( m => m.CartpagePageModule)
   }
 ];
 

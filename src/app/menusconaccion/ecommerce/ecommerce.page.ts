@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { ProductdetailPage } from './productdetail/productdetail.page';
+import { CartpagePage } from './cartpage/cartpage.page';
 
 @Component({
   selector: 'app-ecommerce',
@@ -9,13 +12,14 @@ export class EcommercePage implements OnInit {
   cart: any[] = [];
   categories: string[] = ['Categoría 1', 'Categoría 2', 'Categoría 3'];
   selectedCategory: string | null = null;
-
+  filteredProducts: any[] = [];
   products: any[] = [
     { id: 1, name: 'Producto 1', category: 'Categoría 1', description: 'Descripción completa', price: 100, imageUrl: 'ruta_a_imagen_1.jpg' },
     // ... más productos
   ];
 
-  constructor() { }
+
+  constructor(private modalController: ModalController) { }
 
   ngOnInit() {}
 
@@ -38,13 +42,32 @@ export class EcommercePage implements OnInit {
     const category = segmentEvent.detail.value;
     this.selectedCategory = category === 'all' ? null : category;
   }
-  
-  
-  showProductDetails(product: any) {
-    // Implementa la lógica para mostrar detalles del producto aquí.
+  searchProducts(event: { target: { value: string; }; }) {
+    const searchTerm = event.target.value.toLowerCase();
+    if (!searchTerm) {
+      this.filteredProducts = this.products;
+      return;
+    }
+    this.filteredProducts = this.products.filter(product => {
+      return product.name.toLowerCase().includes(searchTerm);
+    });
   }
-  goToCart() {
-    // Implementa la lógica para ir a la página del carrito o mostrar el carrito como un modal.
+  
+  async showProductDetails(product: any) {
+    const modal = await this.modalController.create({
+      component: ProductdetailPage,
+      componentProps: {
+        'product': product
+      }
+    });
+    return await modal.present();
   }
-    
+  
+  async goToCart() {
+    const modal = await this.modalController.create({
+      component: CartpagePage,
+    });
+    return await modal.present();
+  }
+  
 }
